@@ -59,30 +59,30 @@ fprintf('\n size of X and Xval \n');
 m
 k
 for i = 1:s,
-	total_error_train = 0;
-	total_error_val = 0;
-		
-	for j = 1:50,
-		  %randomly select i no of samples.
-		   index = randsample(s,i);
-		   X_sel = X(index, :);
-		   y_sel = y(index, :);
-		   
+    total_error_train = 0;
+    total_error_val = 0;
+        
+    for j = 1:50,
+        %randomly select i no of samples.
+        index = randsample(s,i);
+        X_sel = X(index, :);
+        y_sel = y(index, :);
 
-           [theta] = trainLinearReg(X_sel, y_sel, lambda);
-           [trainerror,grad] = linearRegCostFunction(X_sel, y_sel, theta, 0);
-		   total_error_train = total_error_train + trainerror;
-		   
-		  
-		   Xval_sel = Xval(index, :);
-		   yval_sel = yval(index, :);
+
+        [theta] = trainLinearReg(X_sel, y_sel, lambda);
+        [trainerror,grad] = linearRegCostFunction(X_sel, y_sel, theta, 0); %lambda is zero
+        total_error_train = total_error_train + trainerror;
+           
           
-           [valerror,grad] = linearRegCostFunction(Xval_sel, yval_sel, theta, 0);
-		   total_error_val = total_error_val+ valerror;
-		  
-		end;
-	error_train(i) = total_error_train/50;
-	error_val(i) = total_error_val/50 ; 
+        Xval_sel = Xval(index, :);
+        yval_sel = yval(index, :);
+          
+        [valerror,grad] = linearRegCostFunction(Xval_sel, yval_sel, theta, 0); %lambda is zero
+        total_error_val = total_error_val+ valerror;
+          
+        end;
+    error_train(i) = total_error_train/50;
+    error_val(i) = total_error_val/50 ; 
 end;
 
 
