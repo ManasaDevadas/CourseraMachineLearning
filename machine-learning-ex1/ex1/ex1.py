@@ -16,6 +16,8 @@ print(plt.show())
 #Note on np.newaxis: When you read data into X, y you will observe that X, y are rank 1 arrays. rank 1 array will have a shape of (m, ) where as rank 2 arrays will have a shape #of (m,1). When operating on arrays its good to convert rank 1 arrays to rank 2 arrays because rank 1 arrays often give unexpected results.
 #To convert rank 1 to rank 2 array we use someArray[:,np.newaxis].
 
+#https://stackoverflow.com/questions/22114921/explaining-the-differences-between-dim-shape-rank-dimension-and-axis-in-numpy
+
 X = X[:,np.newaxis]
 y = y[:,np.newaxis]
 theta = np.zeros([2,1])

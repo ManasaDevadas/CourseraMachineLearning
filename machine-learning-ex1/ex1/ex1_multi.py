@@ -27,11 +27,13 @@ print(J)
 
 def gradientDescentMulti(X, y, theta, alpha, iterations):
     m = len(y)
+    
     for _ in range(iterations):
         temp = np.dot(X, theta) - y
         temp = np.dot(X.T, temp)
         theta = theta - (alpha/m) * temp
     return theta
+    
 theta = gradientDescentMulti(X, y, theta, alpha, num_iters)
 print(theta)
 
