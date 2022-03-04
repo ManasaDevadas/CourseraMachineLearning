@@ -176,7 +176,7 @@ hold off
 fprintf('Program paused tst plot. Press enter to continue.\n');
 pause;
 
-%%%mytest ends here
+%%%test ends here
 
 
 
@@ -186,6 +186,9 @@ pause;
 %  lambda = 0. You should try running the code with different values of
 %  lambda to see how the fit and learning curve change.
 %
+%PolyFit - Wht polyfit is needed? for a simple equation just two points
+%would be enough to plot the hraph (which would be a straight line) so x and h (x %@ theta) would do.
+%But in case of ploynomial with degree > 1, you need multiple continous points to %plot the graph. Think of even 2 degree y = x^2. Without enough points, you cant %plot graph.
 
 lambda = 0;
 %%%Testing out Lambdas
