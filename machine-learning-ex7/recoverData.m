@@ -36,9 +36,12 @@ size(X_rec)
 
 
 
-for i = 1:size(Z, 1)
-  X_rec(i, :) = (U_reduce*Z(i, :)')';
-end
+%for i = 1:size(Z, 1)
+%  X_rec(i, :) = (U_reduce*Z(i, :)')';
+%end
+
+
+X_rec = Z * U_reduce'; % m x n
 
 
 

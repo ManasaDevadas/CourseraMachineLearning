@@ -21,27 +21,31 @@ Z = zeros(size(X, 1), K);
 
 %
 
-U_reduce = U(:, K);
+
+
+
+
+
+
+U_reduce = U(:,[1:K]);   % n x K
 %Z = X * U_reduce;
 fprintf('\nSize Ureduce.\n\n');
 size(U_reduce)
 fprintf('\nSize Z.\n\n');
 size(Z)
 
-
-
-%for i=1:size(X, 1),
-%    for j=1:K,
-%        x = X(i, :)';
-%        projection_k = x' * U(:, j);
-%        Z(i, j) = projection_k;
-%    end
+%U_reduce = U(:, 1:K);
+%for i = 1: size(X, 1)
+%  Z(i, :) = (U_reduce'*X(i, :)')';
 %end
 
-U_reduce = U(:, 1:K);
-for i = 1: size(X, 1)
-  Z(i, :) = (U_reduce'*X(i, :)')';
-end
+  % DIMENSIONS:
+  %    X = m x n
+  %    U = n x n
+  %    U_reduce = n x K
+  %    K = scalar
+
+Z = X * U_reduce;        % m x k
 
 
 % =============================================================
