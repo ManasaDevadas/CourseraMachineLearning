@@ -34,7 +34,12 @@ size(Z)
 fprintf("size of x_rec")
 size(X_rec)
 
-
+  % DIMENSIONS: 
+  %    Z = m x K
+  %    U = n x n
+  %    U_reduce = n x k
+  %    K = scalar
+  %    X_rec = m x n
 
 %for i = 1:size(Z, 1)
 %  X_rec(i, :) = (U_reduce*Z(i, :)')';

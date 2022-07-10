@@ -204,9 +204,10 @@ initial_centroids = kMeansInitCentroids(X, K);
 
 %  Sample 1000 random indexes (since working with all the data is
 %  too expensive. If you have a fast computer, you may increase this.
+%simply getting 1000 nos varying from 1 to max now of rows of X 
 sel = floor(rand(1000, 1) * size(X, 1)) + 1;
 
-%  Setup Color Palette
+%  Setup Color Palette %idx(sel) gets the idx values corresponding sel random integers.
 palette = hsv(K);
 colors = palette(idx(sel), :);
 
